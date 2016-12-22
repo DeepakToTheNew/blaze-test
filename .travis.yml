@@ -18,6 +18,6 @@ notifications:
     recipients:
       - deepak.gupta@tothenew.com  
       - pravin.mahajan@ratecity.com.au 
-      - Hamida.Parkar@ratecity.com.au  
+      - Gareth.Robinson@ratecity.com.au  
     on_success: always
     on_failure: always
