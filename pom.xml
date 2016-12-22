@@ -116,8 +116,8 @@
 						<!-- TestNG suite XML files -->
 						<suiteXmlFile>TestNG.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<testErrorIgnore>true</testErrorIgnore>
-					<testFailureIgnore>true</testFailureIgnore>
+					<!-- <testErrorIgnore>true</testErrorIgnore>
+					<testFailureIgnore>true</testFailureIgnore> -->
 				</configuration>
 			</plugin>
 		</plugins>
