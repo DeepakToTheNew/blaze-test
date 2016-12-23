@@ -110,10 +110,6 @@ public class BaseClass {
 		}else if(result.getStatus()==ITestResult.SUCCESS){
 			System.out.println("*******"+ result.getMethod().getMethodName()+" -: PASS");
 			driver.quit();
-		}
-		else if(result.getStatus()==ITestResult.SKIP){
-			System.out.println("*******"+ result.getMethod().getMethodName()+" -: SKIP");
-			driver.quit();
 		}else{
 			driver.quit();
 		}

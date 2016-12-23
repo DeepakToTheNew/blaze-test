@@ -20,7 +20,6 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 	public void MortgageRatesTest01_ToVerifyClearButtonFunctionality() throws Exception{
 		System.out.println("*************MR_ToVerifyClearButtonFunctionalit****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyClearButtonFunctionality");
-		BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		HomeLoanMortgageRates.fn_ClickOnCompareCheckbox(2);
 		HomeLoanLandingpage.fn_ClickOnClearButton();
 		if(HomeLoanMortgageRates.fn_IsCompareCheckBoxSelected(2)){
@@ -61,7 +60,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		Utility.GoToSleep(3000);
 		if(HomeLoanMortgageRates.fn_CheckNumberOfRateRecord()==20){
-			Assert.assertTrue(false,"Inten'lly F'l@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"); 
+			Assert.assertTrue(true); 
 			BaseClass.logger.log(LogStatus.PASS, "20 Records are getting displayed");
 		}else{
 			Assert.assertTrue(false); 
