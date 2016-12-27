@@ -2,12 +2,15 @@ package com.ratecity.homeloan.automationFramework.utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
+import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -23,6 +26,14 @@ public class BaseClass {
 	public  static ExtentReports report;
 	public  static ExtentTest logger;
 //	private String timeStamp=null;
+	public static List<Integer> total =  new ArrayList<>();
+	public static List<Integer> pass =  new ArrayList<>();
+	public static List<Integer> fail =  new ArrayList<>();
+	public static List<Integer> skip =  new ArrayList<>();
+	public static int totalCount=0;
+	public static int passCount=0;
+	public static int failCount=0;
+	public static int skipCount=0;
 
 	public static WebDriver getDriver() {
 		return driver;
@@ -75,14 +86,10 @@ public class BaseClass {
 	@AfterSuite	
 	public void testtearDown()
 	{
-		System.out.println("***********************"+ System.getProperty("user.dir")+File.separator+"Reports"+">>>>>>>>>>>>>>>");
 		report.endTest(logger);
 		report.flush();
-
-
-
-		// getDriver().get(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"AutomationReport : "+timeStamp+".html");
-
+		SendEmail.SendMail();
+		System.out.println("********************************Mail Sent from After suite>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 
 
@@ -100,19 +107,24 @@ public class BaseClass {
 
 	@AfterMethod
 	public void fn_closebrowser(ITestResult result){
+		
+		total.add(totalCount++);
 		if(result.getStatus()==ITestResult.FAILURE)
 		{
 			String screenshot_path = Utility.CaptureScreen(BaseClass.getDriver(), result.getName());
 			String image  = logger.addScreenCapture(screenshot_path);
 			logger.log(LogStatus.FAIL,"Snapshot below: " ,image);
 			System.out.println("*******"+ result.getMethod().getMethodName()+" -: FAIL");
+			fail.add(failCount++);
 			driver.quit();
 		}else if(result.getStatus()==ITestResult.SUCCESS){
 			System.out.println("*******"+ result.getMethod().getMethodName()+" -: PASS");
+			pass.add(passCount++);
 			driver.quit();
 		}
 		else if(result.getStatus()==ITestResult.SKIP){
 			System.out.println("*******"+ result.getMethod().getMethodName()+" -: SKIP");
+			skip.add(skipCount++);
 			driver.quit();
 		}else{
 			driver.quit();

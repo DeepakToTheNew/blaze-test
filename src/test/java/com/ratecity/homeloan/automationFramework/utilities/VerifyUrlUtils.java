@@ -30,7 +30,7 @@ public class VerifyUrlUtils {
 			put("Best Mortgage", "Mortgages"); 
 			put("Home Loan Ratings", "Compare Home Loan Rates"); 
 			put("First Mortgage", "First Home Loans"); 
-			put("Compare Home Loans", "Compare home loan"); 
+			put("Compare Home Loans", "Home Loan Comparison"); 
 			put("Mortgage Rates", "Mortgage Rates"); 
 			put("1 year Fixed", "1 Year Fixed Mortgage"); 
 			put("3 year Fixed", "3 Year Fixed Mortgage"); 
