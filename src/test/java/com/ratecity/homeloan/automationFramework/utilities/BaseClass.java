@@ -7,10 +7,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -88,6 +86,11 @@ public class BaseClass {
 	{
 		report.endTest(logger);
 		report.flush();
+		try {
+			GenerateChart.generatePieChart();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		SendEmail.SendMail();
 		System.out.println("********************************Mail Sent from After suite>>>>>>>>>>>>>>>>>>>>>>>");
 	}

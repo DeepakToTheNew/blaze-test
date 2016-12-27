@@ -35,6 +35,13 @@
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.12</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.no-hope/slf4j-logging -->
 		<dependency>
 			<groupId>org.no-hope</groupId>
