@@ -61,7 +61,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		Utility.GoToSleep(3000);
 		if(HomeLoanMortgageRates.fn_CheckNumberOfRateRecord()==20){
-			Assert.assertTrue(false,"Intentionally fail!!!!!!!!!!!!!!!!!!!!!!!"); 
+			Assert.assertTrue(true); 
 			BaseClass.logger.log(LogStatus.PASS, "20 Records are getting displayed");
 		}else{
 			Assert.assertTrue(false); 
