@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ratecity.automationFramework</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>RateCity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -16,6 +16,13 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -28,6 +35,13 @@
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.12</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.no-hope/slf4j-logging -->
 		<dependency>
 			<groupId>org.no-hope</groupId>
@@ -46,60 +60,8 @@
 			<version>2.41.2</version>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
-			<!-- Suirefire plugin to run xml files -->
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
-				<version>2.18.1</version> <configuration> <suiteXmlFiles> TestNG suite XML 
-				files <suiteXmlFile>SendEmail.xml</suiteXmlFile> </suiteXmlFiles> </configuration> 
-				</plugin> -->
-			<!-- Post-Man plugin -->
-			<plugin>
-				<groupId>ch.fortysix</groupId>
-				<artifactId>maven-postman-plugin</artifactId>
-				<executions>
-					<execution>
-
-						<id>send a mail</id>
-						<phase>test</phase>
-						<goals>
-							<goal>send-mail</goal>
-						</goals>
-						<inherited>true</inherited>
-
-						<configuration>
-
-							<from>testRateCity@gmail.com</from>
-							<subject>Test Automation Report</subject>
-							<htmlMessageFile>src/test/resources/MailContent.html</htmlMessageFile>
-							<failonerror>true</failonerror>
-							<mailhost>smtp.gmail.com</mailhost>
-							<mailport>465</mailport>
-							<mailssl>true</mailssl>
-							<mailAltConfig>true</mailAltConfig>
-							<!-- Email Authentication(USername and Password) -->
-							<mailuser>testRateCity@gmail.com</mailuser>
-							<mailpassword>Qwerty@123#</mailpassword>
-							<receivers>
-								<receiver>Deepak.gupta@tothenew.com</receiver>
-							</receivers>
-							<fileSets>
-								<fileSet>
-									<!-- Report directory Path -->
-									<directory>${basedir}/Reports</directory>
-									<includes>
-										<include>**/*.html</include>
-										<include>**/*.jpeg</include>
-									</includes>
-									<!-- Use Regular Expressions like **/*.html if you want all the 
-										html files to send -->
-								</fileSet>
-							</fileSets>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -109,12 +71,9 @@
 						<!-- TestNG suite XML files -->
 						<suiteXmlFile>TestNG.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<testErrorIgnore>true</testErrorIgnore>
-					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
 		</plugins>
 
 	</build>
-
 </project>

@@ -159,11 +159,18 @@ public class HomeLoanLandingpage {
 					BaseClass.getDriver().navigate().back();
 					flag=true;
 				}else{
-					homeloanType.get(i+1).click();
-					Utility.GoToSleep(2000);
-					BaseClass.getDriver().navigate().back();
-					flag=true;
-				}
+					   if(!homeloanType.get(i+1).isDisplayed()){
+			   					homeloanType.get(i+2).click();
+					            Utility.GoToSleep(2000);
+								BaseClass.getDriver().navigate().back();
+								flag=true;}
+					   else{
+							homeloanType.get(i+1).click();
+				            Utility.GoToSleep(2000);
+							BaseClass.getDriver().navigate().back();
+							flag=true;
+					   }
+     				}
 			}
 			homeloanType = BaseClass.getDriver().findElements(new RespositoryParser().
 					getobjectLocator("HomeLoan.LoanTypes"));
