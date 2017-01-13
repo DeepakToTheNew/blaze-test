@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -119,6 +120,7 @@ public class HomeLoanLandingpage {
 
 	public static boolean fn_CheckBrowseMoreLink()throws Exception{
 		boolean flag=false;
+		System.out.println("From ChekcBrowser Method************************************");
 		WebElement browsemore = BaseClass.getDriver().findElement(new RespositoryParser().
 				getobjectLocator("HomeLoan.BrowseMore"));
 		if(Utility.isLinkBroken(new URL(browsemore.getAttribute("href")))){
@@ -130,7 +132,7 @@ public class HomeLoanLandingpage {
             flag=true;
 		}
 		else{
-			BaseClass.logger.log(LogStatus.ERROR, "INTO METHOD==>fn_HomeLoanTopLinks : "+
+			BaseClass.logger.log(LogStatus.ERROR, "INTO METHOD==>fn_CheckBrowseMoreLink : "+
 					browsemore.getAttribute("href")+" is not working");
 		}
 		return flag;
@@ -467,29 +469,29 @@ public class HomeLoanLandingpage {
 	public static boolean fn_CheckIfMenuIsPresent(String locator) throws IOException{
 		boolean flag=false;
 		By by=null;
-		locator = locator.toUpperCase();
+		locator=locator.replace("\n", "").replaceAll("\\s","").toUpperCase();
 		switch (locator) {
-		case "BORROW":
-			by = new RespositoryParser().getobjectLocator("HomeLoan.Borrow");
+		case "HOMELOANS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.HomeMenu");
 			if(Utility.isElementPresentAndDisplay(by)){
 				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" -- element is present!!");
 				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
-				if(fn_CheckSubMenuIsPresent("HomeLoan.Borrow.SubMenu")){
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(1) ul div a').length")){
 					Assert.assertTrue(true,"SubMenu are available");
 				}else{
 					Assert.assertTrue(false,"SubMenu are not available!!");
 				}
 				flag= true;
 			}else{
-				BaseClass.logger.log(LogStatus.FATAL,"BORROW menu is not Visible");
+				BaseClass.logger.log(LogStatus.FATAL,"HomeLoan menu is not Visible");
 			}
 			break;
-		case "SAVE":
-			by = new RespositoryParser().getobjectLocator("HomeLoan.Save");
+		case "PERSONALLOANS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.PersonalMenu");
 			if(Utility.isElementPresentAndDisplay(by)){
 				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
 				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
-				if(fn_CheckSubMenuIsPresent("HomeLoan.Save.SubMenu")){
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(2) ul div a').length")){
 					Assert.assertTrue(true,"SubMenu are available");
 				}else{
 					Assert.assertTrue(false,"SubMenu are not available!!");
@@ -499,12 +501,12 @@ public class HomeLoanLandingpage {
 				BaseClass.logger.log(LogStatus.FATAL,"SAVE menu is not Visible");
 			}
 			break;
-		case "INVEST":
-			by = new RespositoryParser().getobjectLocator("HomeLoan.Invest");
+		case "CARLOANS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.CarMenu");
 			if(Utility.isElementPresentAndDisplay(by)){
 				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
 				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
-				if(fn_CheckSubMenuIsPresent("HomeLoan.Invest.SubMenu")){
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(3) ul div a').length")){
 					Assert.assertTrue(true,"SubMenu are available");
 				}else{
 					Assert.assertTrue(false,"SubMenu are not available!!");
@@ -514,12 +516,12 @@ public class HomeLoanLandingpage {
 				BaseClass.logger.log(LogStatus.FATAL,"INVEST menu is not Visible");
 			}
 			break;
-		case "CALCULATE":
-			by = new RespositoryParser().getobjectLocator("HomeLoan.Calculate");
+		case "CREDITCARDS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.CreditMenu");
 			if(Utility.isElementPresentAndDisplay(by)){
 				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
 				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
-				if(fn_CheckSubMenuIsPresent("HomeLoan.Calculate.SubMenu")){
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(4) ul div a').length")){
 					Assert.assertTrue(true,"SubMenu are available");
 				}else{
 					Assert.assertTrue(false,"SubMenu are not available!!");
@@ -529,12 +531,57 @@ public class HomeLoanLandingpage {
 				BaseClass.logger.log(LogStatus.FATAL,"CALCULATE menu is not Visible");
 			}
 			break;
-		case "NEWS":
-			by = new RespositoryParser().getobjectLocator("HomeLoan.News");
+		case "BANKING":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.BankingMenu");
 			if(Utility.isElementPresentAndDisplay(by)){
 				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
 				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
-				if(fn_CheckSubMenuIsPresent("HomeLoan.News.SubMenu")){
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(5) ul div a').length")){
+					Assert.assertTrue(true,"SubMenu are available");
+				}else{
+					Assert.assertTrue(false,"SubMenu are not available!!");
+				}
+				flag= true;
+			}else{
+				BaseClass.logger.log(LogStatus.FATAL,"NEWS menu is not Visible");
+			}
+			break;
+		case "SUPERANNUATION&INVESTMENT":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.SuperannuationMenu");
+			if(Utility.isElementPresentAndDisplay(by)){
+				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
+				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(6) ul div a').length")){
+					Assert.assertTrue(true,"SubMenu are available");
+				}else{
+					Assert.assertTrue(false,"SubMenu are not available!!");
+				}
+				flag= true;
+			}else{
+				BaseClass.logger.log(LogStatus.FATAL,"NEWS menu is not Visible");
+			}
+			break;
+		case "CALCULATORS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.CalculatorsMenu");
+			if(Utility.isElementPresentAndDisplay(by)){
+				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
+				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(7) ul div a').length")){
+					Assert.assertTrue(true,"SubMenu are available");
+				}else{
+					Assert.assertTrue(false,"SubMenu are not available!!");
+				}
+				flag= true;
+			}else{
+				BaseClass.logger.log(LogStatus.FATAL,"NEWS menu is not Visible");
+			}
+			break;
+		case "NEWS&VIEWS":
+			by = new RespositoryParser().getobjectLocator("HomeLoan.NewsMenu");
+			if(Utility.isElementPresentAndDisplay(by)){
+				BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckIfMenuIsPresent :"+locator+" --element is present!!");
+				new ActionsUtil(BaseClass.getDriver()).fn_PerformMouseHover(BaseClass.getDriver().findElement(by));
+				if(fn_CheckSubMenuIsPresent("return document.querySelectorAll('li.dropdown:nth-child(8) ul div a').length")){
 					Assert.assertTrue(true,"SubMenu are available");
 				}else{
 					Assert.assertTrue(false,"SubMenu are not available!!");
@@ -546,6 +593,8 @@ public class HomeLoanLandingpage {
 			break;
 
 		default:
+			System.out.println("********Menu with this name is not exist*******");
+			BaseClass.logger.log(LogStatus.FAIL,"Menu with this name is not exist");
 			flag=false;
 			break;
 		}
@@ -554,16 +603,16 @@ public class HomeLoanLandingpage {
 
 	public static boolean fn_CheckSubMenuIsPresent(String locator) throws IOException  {
 		boolean flag = false;
-		By by = new RespositoryParser().getobjectLocator(locator);
-		List<WebElement> subMenu = BaseClass.getDriver().findElements(by);
-		if(!subMenu.isEmpty()){
+		JavascriptExecutor js = (JavascriptExecutor)BaseClass.getDriver();
+		Long subMenu =  (Long) js.executeScript(locator);
+		if(subMenu!=0){
 			BaseClass.logger.log(LogStatus.INFO,"INTO METHOD ==>fn_CheckSubMenuIsPresent :"
-					+subMenu.size() + " - elements are present!!");
+					+subMenu + " - elements are present!!");
 			flag =  true;
 		}
 		else{
 			BaseClass.logger.log(LogStatus.ERROR,"INTO METHOD ==>fn_CheckSubMenuIsPresent :"
-					+subMenu.size() + "elements are present!!");
+					+subMenu + "elements are present!!");
 		}
 
 		return flag;

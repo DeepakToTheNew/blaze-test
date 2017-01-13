@@ -1,7 +1,10 @@
 package com.ratecity.homeloan.automationFramework.test;
 
 import java.io.IOException;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,18 +12,16 @@ import com.ratecity.homeloan.automationFramework.pages.HomeLoanComparisonpage;
 import com.ratecity.homeloan.automationFramework.pages.HomeLoanLandingpage;
 import com.ratecity.homeloan.automationFramework.pages.HomeLoanMortgageRates;
 import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
+import com.ratecity.homeloan.automationFramework.utilities.RespositoryParser;
 import com.ratecity.homeloan.automationFramework.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
-
-
-
 
 
 public class HomeLoan_LandingPage_Test extends BaseClass {
 
 
 
-	@Test(priority=1,alwaysRun=true)
+/*	@Test(priority=1,alwaysRun=true)
 	public void HomeLoanTest01_ToVerifyTopLinksAreWorking() throws Exception{
 		System.out.println("*************From ToVerifyTopLinksAreWorking****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyTopLinks");
@@ -159,35 +160,24 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 	}
 	@Test(priority=10,alwaysRun=true)
 	public void HomeLoanTest10_ToVerifyTopMenuSubMenuisDisplayed()throws Exception{
+		boolean flag=false;
 		System.out.println("*************ToVerifyTopMenuSubMenuisDisplayed****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyTopMenuSubMenuisDisplayed");
-		if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent("BORROW")){
-			if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent("SAVE")){
-				if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent("INVEST")){
-					if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent("CALCULATE")){
-						if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent("News")){
-							Assert.assertTrue(true);
-							BaseClass.logger.log(LogStatus.PASS,"All TopMenu & their SubMenu is getting displayed");
-						}
-						else{
-							Assert.assertTrue(false);
-							BaseClass.logger.log(LogStatus.FAIL,"Issue in NEWS MENU & their SubMenu");
-						}
-					}else{
-						Assert.assertTrue(false);
-						BaseClass.logger.log(LogStatus.FAIL,"Issue in CALCULATE MENU & their SubMenu");
-					}
-				}else{
-					Assert.assertTrue(false);
-					BaseClass.logger.log(LogStatus.FAIL,"Issue in INVEST MENU & their SubMenu");
-				}
-			}else {
-				Assert.assertTrue(false);
-				BaseClass.logger.log(LogStatus.FAIL,"Issue in SAVE MENU & their SubMenu");
+		List<WebElement> menulist = BaseClass.getDriver().findElements(new RespositoryParser().getobjectLocator("HomeLoan.TopMenu"));
+		for (WebElement webElement : menulist) {
+			if(HomeLoanLandingpage.fn_CheckIfMenuIsPresent(webElement.getText())){
+			   flag=true;
+			}else{
+				break;
 			}
-		}else {
+		}
+		if(flag){
+			Assert.assertTrue(true);
+			BaseClass.logger.log(LogStatus.PASS,"All TopMenu & their SubMenu is getting displayed");
+		}
+		else {
 			Assert.assertTrue(false);
-			BaseClass.logger.log(LogStatus.FAIL,"Issue in BORROW MENU & their SubMenu");
+			BaseClass.logger.log(LogStatus.FAIL,"Issue in TopMenu & their SubMenu ");
 		}
 	}
 
@@ -251,5 +241,5 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 			Assert.assertTrue(false);
 			BaseClass.logger.log(LogStatus.FAIL,"Issue with About Us link");
 		}
-	}
+	}*/
 }

@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class HomeLoan_MortgageRates_Test extends BaseClass {
 
-	@Test(priority=3,alwaysRun=true)
+/*	@Test(priority=3,alwaysRun=true)
 	public void MortgageRatesTest01_ToVerifyClearButtonFunctionality() throws Exception{
 		System.out.println("*************MR_ToVerifyClearButtonFunctionalit****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyClearButtonFunctionality");
@@ -50,9 +50,8 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 				BaseClass.logger.log(LogStatus.FAIL, "INTO METHOD==> CompareFunctionality :  Not working Successfully!! (: ");
 				Assert.assertTrue(false);
 			}
-
 		}
-	}
+	}*/
 	
 	@Test(priority=3,alwaysRun=true)
 	public void MortgageRatesTest03_toVerifyRateTableHas20Records()throws Exception{
@@ -61,7 +60,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		Utility.GoToSleep(3000);
 		if(HomeLoanMortgageRates.fn_CheckNumberOfRateRecord()==20){
-			Assert.assertTrue(true); 
+			Assert.assertTrue(false,"*******************************Intentionally fail!!!!!!!!!"); 
 			BaseClass.logger.log(LogStatus.PASS, "20 Records are getting displayed");
 		}else{
 			Assert.assertTrue(false); 
