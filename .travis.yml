@@ -19,8 +19,5 @@ notifications:
       - deepak.gupta@tothenew.com   
     on_success: always
     on_failure: always
-after_success:
-- mvn site
-after_failure:
-- mvn site
+
 
