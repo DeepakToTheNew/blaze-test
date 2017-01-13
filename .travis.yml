@@ -3,7 +3,6 @@ jdk:
   - oraclejdk8
 script:
 - mvn test
-- mvn site
 sudo: required
 dist: trusty
 addons:
@@ -20,3 +19,8 @@ notifications:
       - deepak.gupta@tothenew.com   
     on_success: always
     on_failure: always
+after_success:
+- mvn site
+after_failure:
+- mvn site
+
