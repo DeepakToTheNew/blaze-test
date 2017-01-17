@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class HomeLoan_MortgageRates_Test extends BaseClass {
 
-	@Test(priority=3,alwaysRun=true)
+	@Test(priority=3,alwaysRun=true,description="Test to Verify,Clear button functionality should work")
 	public void MortgageRatesTest01_ToVerifyClearButtonFunctionality() throws Exception{
 		System.out.println("*************MR_ToVerifyClearButtonFunctionalit****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyClearButtonFunctionality");
@@ -32,7 +32,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 			BaseClass.logger.log(LogStatus.PASS,"Compare CheckBox is not Selected"); 
 		}
 	}
-	@Test(priority=1,alwaysRun=true)
+	@Test(priority=1,alwaysRun=true,description="Test to Verify,Compare Button functionality with 2 Banks")
 	public void MortgageRatesTest02_toVerifyComparefunctionalityWith2Banks() throws Exception{
 		System.out.println("*************MR_VerifyComparefunctionalityWith2Banks****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyComparefunctionalityWith2Banks");
@@ -53,14 +53,14 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		}
 	}
 	
-	@Test(priority=3,alwaysRun=true)
+	@Test(priority=3,alwaysRun=true,description="Test to Verify,RateTable should have 20 Records")
 	public void MortgageRatesTest03_toVerifyRateTableHas20Records()throws Exception{
 		System.out.println("*************MR_VerifyRateTableHas20Records****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyRateTableHas20Records");
 		BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		Utility.GoToSleep(3000);
 		if(HomeLoanMortgageRates.fn_CheckNumberOfRateRecord()==20){
-			Assert.assertTrue(false,"*******************************Intentionally fail!!!!!!!!!"); 
+			Assert.assertTrue(true); 
 			BaseClass.logger.log(LogStatus.PASS, "20 Records are getting displayed");
 		}else{
 			Assert.assertTrue(false); 
@@ -68,7 +68,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=2,alwaysRun=true)
+	@Test(priority=2,alwaysRun=true,description="Test to Verify,Compare Button functionality for Big 4 Banks")
 	public void MortgageRatesTest04_toVerifyCompareWithBig4Button() throws Exception{
 		System.out.println("*************MR_VerifyCompareWithBig4Button****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyCompareWithBig4Button");

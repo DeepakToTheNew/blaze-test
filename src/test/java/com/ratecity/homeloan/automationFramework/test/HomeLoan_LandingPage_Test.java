@@ -3,7 +3,6 @@ package com.ratecity.homeloan.automationFramework.test;
 import java.io.IOException;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,11 +16,12 @@ import com.ratecity.homeloan.automationFramework.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
 
 
+
 public class HomeLoan_LandingPage_Test extends BaseClass {
 
 
 
-	@Test(priority=1,alwaysRun=true)
+	@Test(priority=1,alwaysRun=true,description="Test to Verify Top Links should work!!")
 	public void HomeLoanTest01_ToVerifyTopLinksAreWorking() throws Exception{
 		System.out.println("*************From ToVerifyTopLinksAreWorking****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyTopLinks");
@@ -34,7 +34,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=2,alwaysRun=true)
+	@Test(priority=2,alwaysRun=true,description="Test to Verify Compare bar should not have more then 5 options")
 	public void HomeLoanTest02_ToVerifyMax5ProductsOnCompareBar() throws Exception{
 		System.out.println("***********ToVerifyMax5ProductsOnCompareBar**********");
 		logger=report.startTest("HomeLoanLandingPage_VerifyMax5ProductsOnCompareBar");
@@ -53,9 +53,9 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=3,alwaysRun=true)
+	@Test(priority=3,alwaysRun=true,description="Test to Verify,Products links are Working")
 	public void HomeLoanTest03_ToVerifyCompanyProductslinksAreWorking() throws Exception{
-		System.out.println("*************From ToVerifyCompanyProductslinksAreWorking****************_");
+		System.out.println("*************From ToVerifyCompanyProductslinksAreWorking****************");
 		logger=report.startTest("HomeLoanLandingPage_VerifyCompanyProductslinksAreWorking");
 		if(HomeLoanLandingpage.fn_CheckCompany_ProductLink()){
 			Assert.assertTrue(true);
@@ -66,8 +66,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=4,alwaysRun=true)
-
+	@Test(priority=4,alwaysRun=true,description="TestCase to Verify Browse More Link is working or Not")
 	public void HomeLoanTest04_ToVerifyBrowseMoreLinkisWorking() throws Exception{
 		System.out.println("*************ToVerifyBrowseMoreLinkisWorking****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyBrowseMoreLinkisWorking");
@@ -80,7 +79,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=5)
+	@Test(priority=5,alwaysRun=true,description="Test to Verify,Home Loan tools should be working")
 	public void HomeLoanTest05_ToVerifyHomeLoantoolsAreworking(){
 
 		logger=report.startTest("HomeLoanLandingPage_VerifyHomeLoantoolsAreworking");
@@ -92,8 +91,8 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 			BaseClass.logger.log(LogStatus.FAIL,"Tools are not working");
 		}
 	}
-	@Test(priority=6,alwaysRun=true)
-
+	
+	@Test(priority=6,alwaysRun=true,description="Test to Verify,Home Loan News are Working")
 	public void HomeLoanTest06_ToVerifyHomeLoanNewsAreWorking() throws Exception{
 		System.out.println("*************ToVerifyHomeLoanNewsAreWorking****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyHomeLoanNewsAreWorking");
@@ -106,7 +105,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		} 
 	}
 
-	@Test(priority=7,alwaysRun=true)
+	@Test(priority=7,alwaysRun=true,description="Test to Verify,ContentLinks And PopularHomeLoan Links are Working")
 	public void HomeLoanTest07_ToVerifyContentLinksAndPopularHomeLoanLinks()throws Exception{
 		System.out.println("*************ToVerifyContentLinksAndPopularHomeLoanLinks****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyContentLinksAndPopularHomeLoanLinks");
@@ -143,7 +142,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 			Assert.assertTrue(false, "HomeLoan page is not landed successfully");
 		}
 	}
-	@Test(priority=9,alwaysRun=true)
+	@Test(priority=9,alwaysRun=true,description="Test to Verify, EmbedButton Functionality should work")
 	public void HomeLoanTest09_ToVerifyEmbedButtonFunctionality() throws Exception{
 		System.out.println("*************ToVerifyEmbedButtonFunctionality****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyEmbedButtonFunctionality");
@@ -158,7 +157,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 			BaseClass.logger.log(LogStatus.FAIL,"Embed Window is not displayed");
 		}
 	}
-	@Test(priority=10,alwaysRun=true)
+	@Test(priority=10,alwaysRun=true,description="Test to Verify, AllTop Menu and SubMenu should work")
 	public void HomeLoanTest10_ToVerifyTopMenuSubMenuisDisplayed()throws Exception{
 		boolean flag=false;
 		System.out.println("*************ToVerifyTopMenuSubMenuisDisplayed****************_");
@@ -181,7 +180,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=11,alwaysRun=true)
+	@Test(priority=11,alwaysRun=true,description="Test to Verify, EmbedButton Functionality should work")
 	public void HomeLoanTest11_ToVerifyFooterMenuisDisplayed() throws Exception{
 		System.out.println("*************ToVerifyTopMenuSubMenuisDisplayed****************");	
 		logger=report.startTest("HomeLoanLandingPage_VerifyFooterMenuisDisplayed");
@@ -194,7 +193,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=12,alwaysRun=true)
+	@Test(priority=12,alwaysRun=true,description="Test to Verify, Disclaimer Text should displayed")
 	public void HomeLoanTest12_ToVerifyDisclaimerTextisDisplayed() throws Exception{
 		System.out.println("*************ToVerifyDisclaimerTextisDisplayed****************");	
 		logger=report.startTest("HomeLoanLandingPage_VerifyDisclaimerTextisDisplayed");
@@ -207,7 +206,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=13,alwaysRun=true)
+	@Test(priority=13,alwaysRun=true,description="Test to Verify,RateCity Logo & text should displayed")
 	public void HomeLoanTest13_ToVerifyRateCityLogoAndText()throws Exception{
 		System.out.println("*************ToVerifyRateCityLogoAndText****************");
 		logger=report.startTest("HomeLoanLandingPage_VerifyRateCityLogoAndText");
@@ -225,7 +224,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 		}
 	}
 
-	@Test(priority=14,alwaysRun=true)
+	@Test(priority=14,alwaysRun=true,description="Test to Verify,AboutUs & Contact Link should work")
 	public void HomeLoanTest14_ToVerifyAboutUsAndContactusLinks()throws Exception{
 		System.out.println("*************ToVerifyAboutUsAndContactusLinks****************");
 		logger=report.startTest("HomeLoanLandingPage_VerifyAboutUsAndContactusLinks");

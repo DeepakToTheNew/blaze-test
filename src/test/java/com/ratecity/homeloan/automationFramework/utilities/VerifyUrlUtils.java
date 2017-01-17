@@ -79,6 +79,9 @@ public class VerifyUrlUtils {
 					put("PROMOTEDMortgage Saver Home Loan", "Mortgage Saver Home Loan");
 					put("PROMOTEDKick Starter Home Loan", "Home Loans Kick Starter Home Loan");
 					put("Essentials Home Loan (Purchase) (Principal and Interest)", "Essentials Home Loan");
+					put("Essentials Home Loan (Purchase/Refinance) (Principal and Interest)", "Essentials Home Loan");
+					put("Offset Home Loan (Purchase) (Principal and Interest) (LVR < 80%)", "Offset Home Loan");
+					put("Breathe Easy Home Loan (LVR 80%-90%)", "Breathe Easy Home Loan");
 					
 
 				}};

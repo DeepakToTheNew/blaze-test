@@ -439,7 +439,12 @@ public class HomeLoanLandingpage {
 					if(Utility.fn_VerifyURLStatus(companyProductLinks.get(i).getAttribute("href"))){
 						String urlText = companyProductLinks.get(i).getText();
 						companyProductLinks.get(i).click();
-						VerifyUrlUtils.fn_VerifyTitle_CompanyProductsLinks(urlText);
+						if(!VerifyUrlUtils.fn_VerifyTitle_CompanyProductsLinks(urlText)){
+							flag=false;
+							BaseClass.logger.log(LogStatus.ERROR,"INTO METHOD==>fn_CheckCompany_ProductLink :"
+									+ companyProductLinks.get(i).getText()+ "Wrong page is getting displayed"); 
+							break;
+						}
 						companyProductLinks = BaseClass.getDriver().findElements(new RespositoryParser()
 								.getobjectLocator("HomeLoan.Company_ProductsLink"));
 						flag=true;
@@ -454,7 +459,7 @@ public class HomeLoanLandingpage {
 				}
 			}
 		}catch(Exception e){
-
+           System.out.println("From catch Block!!!!");
 		}
       return flag;
 	}
