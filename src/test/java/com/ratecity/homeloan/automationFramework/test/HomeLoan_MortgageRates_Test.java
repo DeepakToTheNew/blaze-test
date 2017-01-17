@@ -16,7 +16,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class HomeLoan_MortgageRates_Test extends BaseClass {
 
-/*	@Test(priority=3,alwaysRun=true)
+	@Test(priority=3,alwaysRun=true)
 	public void MortgageRatesTest01_ToVerifyClearButtonFunctionality() throws Exception{
 		System.out.println("*************MR_ToVerifyClearButtonFunctionalit****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyClearButtonFunctionality");
@@ -51,7 +51,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 				Assert.assertTrue(false);
 			}
 		}
-	}*/
+	}
 	
 	@Test(priority=3,alwaysRun=true)
 	public void MortgageRatesTest03_toVerifyRateTableHas20Records()throws Exception{
