@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 import java.util.HashMap;
 import java.util.Map;

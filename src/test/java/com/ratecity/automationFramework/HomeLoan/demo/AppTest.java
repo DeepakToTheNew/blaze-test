@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.demo;
+package com.ratecity.automationFramework.HomeLoan.demo;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

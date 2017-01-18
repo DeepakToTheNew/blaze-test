@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.pages;
+package com.ratecity.automationFramework.HomeLoan.pages;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebElement;
 
-import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
-import com.ratecity.homeloan.automationFramework.utilities.RespositoryParser;
-import com.ratecity.homeloan.automationFramework.utilities.Utility;
+import com.ratecity.automationFramework.HomeLoan.utilities.BaseClass;
+import com.ratecity.automationFramework.HomeLoan.utilities.RespositoryParser;
+import com.ratecity.automationFramework.HomeLoan.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
 
 import junit.framework.Assert;

@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.pages;
+package com.ratecity.automationFramework.HomeLoan.pages;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,11 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import com.ratecity.homeloan.automationFramework.utilities.ActionsUtil;
-import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
-import com.ratecity.homeloan.automationFramework.utilities.RespositoryParser;
-import com.ratecity.homeloan.automationFramework.utilities.Utility;
-import com.ratecity.homeloan.automationFramework.utilities.VerifyUrlUtils;
+import com.ratecity.automationFramework.HomeLoan.utilities.ActionsUtil;
+import com.ratecity.automationFramework.HomeLoan.utilities.BaseClass;
+import com.ratecity.automationFramework.HomeLoan.utilities.RespositoryParser;
+import com.ratecity.automationFramework.HomeLoan.utilities.Utility;
+import com.ratecity.automationFramework.HomeLoan.utilities.VerifyUrlUtils;
 import com.relevantcodes.extentreports.LogStatus;
 
 

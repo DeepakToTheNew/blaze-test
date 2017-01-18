@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 
 import java.io.File;
@@ -17,7 +17,7 @@ public class RespositoryParser {
 	public RespositoryParser() throws IOException
 	{
 		String workingDir=System.getProperty("user.dir");
-		this.RepositoryFile=workingDir+File.separator+"src"+File.separator+"test"+File.separator+"java"+File.separator+"com"+File.separator+"ratecity"+File.separator+"homeloan"+File.separator+"automationFramework"+File.separator+"OR"+File.separator+"HomeLoan_ObjectRepo.properties";		
+		this.RepositoryFile=workingDir+File.separator+"src"+File.separator+"test"+File.separator+"java"+File.separator+"com"+File.separator+"ratecity"+File.separator+"automationFramework"+File.separator+"HomeLoan"+File.separator+"OR"+File.separator+"HomeLoan_ObjectRepo.properties";		
 		stream = new FileInputStream(RepositoryFile);
 		propertyFile.load(stream);
 	}

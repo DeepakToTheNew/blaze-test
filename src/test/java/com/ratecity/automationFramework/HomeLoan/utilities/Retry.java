@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 
 import org.testng.IRetryAnalyzer;

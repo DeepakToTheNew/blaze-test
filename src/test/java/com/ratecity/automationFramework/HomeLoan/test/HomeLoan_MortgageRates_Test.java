@@ -1,13 +1,13 @@
-package com.ratecity.homeloan.automationFramework.test;
+package com.ratecity.automationFramework.HomeLoan.test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanComparisonpage;
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanLandingpage;
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanMortgageRates;
-import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
-import com.ratecity.homeloan.automationFramework.utilities.Utility;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanComparisonpage;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanLandingpage;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanMortgageRates;
+import com.ratecity.automationFramework.HomeLoan.utilities.BaseClass;
+import com.ratecity.automationFramework.HomeLoan.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
 
 
@@ -20,7 +20,6 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 	public void MortgageRatesTest01_ToVerifyClearButtonFunctionality() throws Exception{
 		System.out.println("*************MR_ToVerifyClearButtonFunctionalit****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyClearButtonFunctionality");
-	//	BaseClass.getDriver().navigate().to("http://www.ratecity.com.au/home-loans/mortgage-rates");
 		HomeLoanMortgageRates.fn_ClickOnCompareCheckbox(2);
 		HomeLoanLandingpage.fn_ClickOnClearButton();
 		if(HomeLoanMortgageRates.fn_IsCompareCheckBoxSelected(2)){

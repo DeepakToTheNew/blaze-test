@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -74,12 +74,14 @@ public class BaseClass {
 			if (file.mkdir()) {
 				//report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"AutomationReport : "+timeStamp+".html");
 				report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"TestReport"+".html");
+				report.loadConfig(new File(System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"extent-config"+".xml"));
 			} else {
 				BaseClass.logger.log(LogStatus.ERROR, "INTO Method Test Report ==> Failed to create directory in specified position");
 			}
 		}else
 			//report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"AutomationReport : "+timeStamp+".html");
 			report=new ExtentReports(System.getProperty("user.dir")+File.separator+"Reports"+File.separator+"TestReport"+".html");
+		report.loadConfig(new File(System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"extent-config"+".xml"));
 
 	}
 

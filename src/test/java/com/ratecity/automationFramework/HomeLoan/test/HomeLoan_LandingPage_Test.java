@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.test;
+package com.ratecity.automationFramework.HomeLoan.test;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,17 +7,17 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanComparisonpage;
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanLandingpage;
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanMortgageRates;
-import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
-import com.ratecity.homeloan.automationFramework.utilities.RespositoryParser;
-import com.ratecity.homeloan.automationFramework.utilities.Utility;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanComparisonpage;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanLandingpage;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanMortgageRates;
+import com.ratecity.automationFramework.HomeLoan.utilities.BaseClass;
+import com.ratecity.automationFramework.HomeLoan.utilities.RespositoryParser;
+import com.ratecity.automationFramework.HomeLoan.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
 
 
 
-public class HomeLoan_LandingPage_Test extends BaseClass {
+public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.HomeLoan.utilities.BaseClass {
 
 
 
@@ -25,7 +25,7 @@ public class HomeLoan_LandingPage_Test extends BaseClass {
 	public void HomeLoanTest01_ToVerifyTopLinksAreWorking() throws Exception{
 		System.out.println("*************From ToVerifyTopLinksAreWorking****************_");
 		logger=report.startTest("HomeLoanLandingPage_VerifyTopLinks");
-		if(HomeLoanLandingpage.fn_HomeLoanTopLinks()){
+		if(com.ratecity.automationFramework.HomeLoan.pages.HomeLoanLandingpage.fn_HomeLoanTopLinks()){
 			Assert.assertTrue(true);
 			BaseClass.logger.log(LogStatus.PASS,"All Top links are working");
 		}else{

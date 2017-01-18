@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +28,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import com.google.common.base.Function;
-import com.ratecity.homeloan.automationFramework.pages.HomeLoanMortgageRates;
+import com.ratecity.automationFramework.HomeLoan.pages.HomeLoanMortgageRates;
 import com.relevantcodes.extentreports.LogStatus;
 
 
@@ -125,7 +125,7 @@ public class Utility {
 				<= Integer.parseInt(fn_ModifyString(updated_value))){
 			flag=true;
 		}else{
-			updated_value=HomeLoanMortgageRates.fn_MonthlyRepaymentAfterUpdate(); 
+			updated_value=com.ratecity.automationFramework.HomeLoan.pages.HomeLoanMortgageRates.fn_MonthlyRepaymentAfterUpdate(); 
 			if(Integer.parseInt(fn_ModifyString(prev_value))
 					< Integer.parseInt(fn_ModifyString(updated_value))){
 				flag=true;
