@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="HomeLoan" verbose="1">
+	<listeners>
+		<listener class-name="com.ratecity.automationFramework.HomeLoan.utilities.AnnotationTransformer" />
+	 <!--	<listener class-name="com.ratecity.homeloan.automationFramework.utilities.TestListener" /> -->
+	</listeners>
 	<test name="HomeLoanLandingPage">
 		<classes>
 			<class
-				name="com.ratecity.homeloan.automationFramework.test.HomeLoan_LandingPage_Test" />
+				name="com.ratecity.automationFramework.HomeLoan.test.HomeLoan_LandingPage_Test" />
 		</classes>
 	</test>
 
 	<test name="HomeLoanMortgageRatePage">
 		<classes>
 			<class
-				name="com.ratecity.homeloan.automationFramework.test.HomeLoan_MortgageRates_Test" />
+				name="com.ratecity.automationFramework.HomeLoan.test.HomeLoan_MortgageRates_Test" />
 		</classes>
 	</test>
 </suite>

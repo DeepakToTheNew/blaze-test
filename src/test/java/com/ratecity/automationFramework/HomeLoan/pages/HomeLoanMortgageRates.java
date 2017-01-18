@@ -1,20 +1,15 @@
-package com.ratecity.homeloan.automationFramework.pages;
+package com.ratecity.automationFramework.HomeLoan.pages;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.FluentWait;
 
-import com.google.common.base.Function;
-import com.ratecity.homeloan.automationFramework.utilities.BaseClass;
-import com.ratecity.homeloan.automationFramework.utilities.RespositoryParser;
-import com.ratecity.homeloan.automationFramework.utilities.Utility;
+import com.ratecity.automationFramework.HomeLoan.utilities.BaseClass;
+import com.ratecity.automationFramework.HomeLoan.utilities.RespositoryParser;
+import com.ratecity.automationFramework.HomeLoan.utilities.Utility;
 import com.relevantcodes.extentreports.LogStatus;
 
 

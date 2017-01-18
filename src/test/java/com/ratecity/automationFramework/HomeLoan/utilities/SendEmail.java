@@ -1,4 +1,4 @@
-package com.ratecity.homeloan.automationFramework.utilities;
+package com.ratecity.automationFramework.HomeLoan.utilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class SendEmail {
 			DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 			Date dateobj = new Date();
 			// System.out.println(df.format(dateobj));
-			message.setSubject("Daily QA Report ("+df.format(dateobj)+")");  
+			message.setSubject("QA Report ("+df.format(dateobj)+")");  
 			messageBody=GenerateHTML();
 			BodyPart messageBodyPart1 = new MimeBodyPart();  
 			messageBodyPart1.setContent(messageBody,"text/html");
@@ -64,10 +64,16 @@ public class SendEmail {
 		    DataSource source = new FileDataSource(filename);  
 		    messageBodyPart2.setDataHandler(new DataHandler(source));  
 		    messageBodyPart2.setFileName("TestReport");  
+		  /*  MimeBodyPart messageBodyPart3 = new MimeBodyPart();  
+		    String allureReport = System.getProperty("user.dir")+File.separator+"target"+File.separator+"site"+File.separator+"allure-maven-plugin"+File.separator+"index"+".html";
+		    DataSource source1 = new FileDataSource(allureReport);  
+		    messageBodyPart3.setDataHandler(new DataHandler(source1));  
+		    messageBodyPart3.setFileName("AllureReport"); */
 		    Multipart multipart = new MimeMultipart();  
 		    multipart.addBodyPart(messageBodyPart1);  
 		    multipart.addBodyPart(imagePart);
 		    multipart.addBodyPart(messageBodyPart2);  
+		   // multipart.addBodyPart(messageBodyPart3);  
 		    message.setContent(multipart );  
 			Transport.send(message);
 
@@ -119,7 +125,11 @@ public class SendEmail {
 		"<div id='header-content'><table>"+
 					  "<tr></tr>"+
 					   "<tr></tr>"+
-					   "<tr>For More Info.....PFA attached file herewith</tr>"+
+					   "<tr></tr>"+
+					   "<tr></tr>"+
+					   "<tr></tr>"+
+					   "<tr></tr>"+
+					   "<tr><b><i>For detailed info.....PFA file herewith</i></b></tr>"+
 					   "</table>"+
 		"</div>"+
 		"</body>"+
