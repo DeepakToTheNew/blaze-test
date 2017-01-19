@@ -52,7 +52,7 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 		}
 	}
 	
-	@Test(priority=3,alwaysRun=true,description="Test to Verify,RateTable should have 20 Records")
+	/*@Test(priority=3,alwaysRun=true,description="Test to Verify,RateTable should have 20 Records")
 	public void MortgageRatesTest03_toVerifyRateTableHas20Records()throws Exception{
 		System.out.println("*************MR_VerifyRateTableHas20Records****************");
 		logger = report.startTest("HomeLoan_MortgageRates_VerifyRateTableHas20Records");
@@ -87,5 +87,5 @@ public class HomeLoan_MortgageRates_Test extends BaseClass {
 
 		}
 	}
-	
+*/	
 }

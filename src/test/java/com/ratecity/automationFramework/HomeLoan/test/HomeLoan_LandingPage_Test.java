@@ -53,7 +53,7 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 		}
 	}
 
-	@Test(priority=3,alwaysRun=true,description="Test to Verify,Products links are Working")
+	/*@Test(priority=3,alwaysRun=true,description="Test to Verify,Products links are Working")
 	public void HomeLoanTest03_ToVerifyCompanyProductslinksAreWorking() throws Exception{
 		System.out.println("*************From ToVerifyCompanyProductslinksAreWorking****************");
 		logger=report.startTest("HomeLoanLandingPage_VerifyCompanyProductslinksAreWorking");
@@ -240,5 +240,5 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 			Assert.assertTrue(false);
 			BaseClass.logger.log(LogStatus.FAIL,"Issue with About Us link");
 		}
-	}
+	}*/
 }
