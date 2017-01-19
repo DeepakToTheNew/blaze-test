@@ -34,7 +34,7 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 		}
 	}
 
-	@Test(priority=2,alwaysRun=true,description="Test to Verify Compare bar should not have more then 5 options")
+	/*@Test(priority=2,alwaysRun=true,description="Test to Verify Compare bar should not have more then 5 options")
 	public void HomeLoanTest02_ToVerifyMax5ProductsOnCompareBar() throws Exception{
 		System.out.println("***********ToVerifyMax5ProductsOnCompareBar**********");
 		logger=report.startTest("HomeLoanLandingPage_VerifyMax5ProductsOnCompareBar");
@@ -53,7 +53,7 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 		}
 	}
 
-	/*@Test(priority=3,alwaysRun=true,description="Test to Verify,Products links are Working")
+	@Test(priority=3,alwaysRun=true,description="Test to Verify,Products links are Working")
 	public void HomeLoanTest03_ToVerifyCompanyProductslinksAreWorking() throws Exception{
 		System.out.println("*************From ToVerifyCompanyProductslinksAreWorking****************");
 		logger=report.startTest("HomeLoanLandingPage_VerifyCompanyProductslinksAreWorking");
@@ -141,7 +141,7 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 			logger.log(LogStatus.FAIL,"HomeLoan page is not landed Successfully" );
 			Assert.assertTrue(false, "HomeLoan page is not landed successfully");
 		}
-	}
+	}*/
 	@Test(priority=9,alwaysRun=true,description="Test to Verify, EmbedButton Functionality should work")
 	public void HomeLoanTest09_ToVerifyEmbedButtonFunctionality() throws Exception{
 		System.out.println("*************ToVerifyEmbedButtonFunctionality****************_");
@@ -180,7 +180,7 @@ public class HomeLoan_LandingPage_Test extends com.ratecity.automationFramework.
 		}
 	}
 
-	@Test(priority=11,alwaysRun=true,description="Test to Verify, EmbedButton Functionality should work")
+	/*@Test(priority=11,alwaysRun=true,description="Test to Verify, EmbedButton Functionality should work")
 	public void HomeLoanTest11_ToVerifyFooterMenuisDisplayed() throws Exception{
 		System.out.println("*************ToVerifyTopMenuSubMenuisDisplayed****************");	
 		logger=report.startTest("HomeLoanLandingPage_VerifyFooterMenuisDisplayed");
